@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col s12">
+            <h4 class="center">Instructions:</h4>
+            <p class="flow-text center deep-orange-text text-accent-3 flow-text">Please follow the instructions carefully to avoid redoing it.</p>
+            <hr>
+            <ol>
+                <li>Please complete the labeling procedure in one go.</li>
+                <li>Please do not hit the back button during the teaching process.</li>
+                <li>If you ever want to take a short break, please pause in the Step-1 scren only.</li>
+                <li> <span class="deep-orange-text text-accent-3">Any Bugs? </span>- Let us know. We would be thankful if you can capture a screen shot for us.</li>
+            </ol>
+        </div>
+
+        <div class="col s12 center-align">
+            <form action="" method="post">
+                <button class="btn center-align" type="submit">Start</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

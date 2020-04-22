@@ -1,0 +1,40 @@
+
+#header {
+    margin: 0px;
+}
+
+#content {
+    height: 72vh;
+}
+
+#footer {
+    text-align: center;
+}
+
+body {
+    font-size: 20px;
+
+}
+
+#bg-image {
+    /*background-image: url("https://i5.walmartimages.com/asr/b2a44918-cd5c-43bd-baa2-17c99a1a8538_1.10d3655f0059e90ea49e7d30a880e3bd.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF");*/
+    width: 100px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    position: fixed;
+    background-repeat: repeat;
+    background-size: 100% auto;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+}
+
+div#content > span:after {
+    font-size: 20px;
+}
+
+#form > .txt-large{
+    font-size: 20px;
+}

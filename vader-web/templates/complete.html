@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col s12">
+            <h4 class="center">You have successfully completed.</h4>
+            <div class="center">
+                <img src="https://media.giphy.com/media/3o6ozuHcxTtVWJJn32/giphy.gif"
+                     alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

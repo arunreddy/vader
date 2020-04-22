@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col s12 center-align">
+            <h4>Step-2</h4>
+            <div class="card-panel yellow accent-1 deep-orange-text text-accent-3 flow-text">Classify if the image is
+                Domestic or Wild?
+            </div>
+            <hr>
+        </div>
+        <div class="col s12">
+            <div class="center-align">
+                <img width="224px" height="224px"
+                     src="{{ url_for('img_static',domain = domain, img_type='orig', filename=tgt_img) }}"/>
+            </div>
+        </div>
+    </div>
+    <form action="" method="post">
+        <div class="row">
+            <div class="col s12 center-align">
+                <span class="red-text">The teacher says the class label is <b>{{selected_label}}</b>.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col offset-s1 s5 right-align">
+                <div style="margin-top: 10px">
+                    Choose a <b class="blue-text text-accent-3">class label</b> for the image above:
+                </div>
+            </div>
+            <div class="col s4 left-align">
+                <div style="margin-top:10px">
+                    <label>
+                        <input name="class_label" class="with-gap" type="radio" value="domestic" required/>
+                        <span>Domestic</span>
+                    </label>
+                    <label>
+                        <input name="class_label" class="with-gap"  type="radio" value="wild" required/>
+                        <span>Wild</span>
+                    </label>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn btn-large" type="submit">Next</button>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function Validate() {
+            var radios = document.getElementsByName('IDType')
+
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    alert("Selected Value = " + radios[i].value);
+                    return true; // checked
+                }
+            }
+            ;
+
+            // not checked, show error
+            document.getElementById('ValidationError').innerHTML = 'Error!!!';
+            return false;
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col s12 center-align">
+            <h4>Step-3</h4>
+            <div class="card-panel yellow accent-1 deep-orange-text text-accent-3 flow-text">Can you still recognize the
+                given text as {{ choosen_class }}? (Choose Yes/No)
+            </div>
+        </div>
+        <div>
+            <ol>
+                <li><b>Sci</b>: emails related to "<b>sci.crypt</b>" (encryption)</li>
+                <li><b>Comp</b>: emails related to <b>"comp.os.ms-windows"</b>(windows operating system)</li>
+            </ol>
+            <hr>
+        </div>
+        <div class="col s12">
+            <div>
+                <iframe frameborder='0' width="100%" height="400px" src="{{ iframe }}" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <form action="" method="post">
+        <div class="row">
+            <div class="col s6 right-align">
+                <label>
+                    <input name="decision_label" type="radio" value="yes" required/>
+                    <span>Yes</span>
+                </label>
+            </div>
+            <div class="col s6 left-align">
+                <label>
+                    <input name="decision_label" type="radio" value="no" required/>
+                    <span>No</span>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn">Next</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col s12 center-align">
+            <h4>Step-3</h4>
+            <div class="card-panel yellow accent-1 deep-orange-text text-accent-3 flow-text">Can you still recognize the
+                masked image as {{ choosen_class }}? (Choose Yes/No)
+            </div>
+            <hr>
+        </div>
+        <div class="col s6">
+            <p class="center-align">Original Image</p>
+            <div class="center-align">
+                <img width="224px" height="224px"
+                     src="{{ url_for('img_static',domain = 'cat', img_type='orig', filename=tgt_img) }}"/>
+            </div>
+        </div>
+        <div class="col s6">
+            <p class="center-align">Masked Image</p>
+            <div class="center-align">
+                <img src="{{ url_for('img_static',domain = 'cat', img_type='mask', filename=mask_img) }}"/>
+            </div>
+        </div>
+    </div>
+    <form id="form" action="" method="post">
+        <div class="row">
+            <div class="col s6 right-align">
+                <label>
+                    <input name="decision_label" class="with_gap" type="radio" value="yes" required/>
+                    <span class="txt-large">Yes</span>
+                </label>
+            </div>
+            <div class="col s6 left-align">
+                <label>
+                    <input name="decision_label" class="with_gap"  type="radio" value="no" required/>
+                    <span>No</span>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn btn-large" type="submit">Next</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

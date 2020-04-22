@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+        .reuters-text{
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+	    }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col s12 center-align">
+            <h4>Step-2</h4>
+            <div class="card-panel yellow accent-1 deep-orange-text text-accent-3 flow-text">Classify if the text is Sci
+                or Comp
+            </div>
+            <hr>
+        </div>
+        <div>
+            <ol>
+                <li><b>Sci</b>: emails related to "<b>sci.crypt</b>" (encryption)</li>
+                <li><b>Comp</b>: emails related to <b>"comp.os.ms-windows"</b>(windows operating system)</li>
+            </ol>
+            <hr>
+        </div>
+        <div class="col s12">
+            <div class="card horizontal">
+                <div class="card-content">
+                    <pre class="reuters-text">{{ txt }}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="" method="post">
+        <div class="row">
+            <div class="col s12 center-align">
+                <span class="red-text">The teacher say's the class label is <b>{{selected_label}}</b>.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s8 right-align">What do you think is the label based on the teacher's label?
+            </div>
+            <div class="col s4 left-align">
+                <div style="margin-top:10px">
+                    <label>
+                        <input name="exp_label" type="radio" value="sci" required/>
+                        <span>Sci</span>
+                    </label>
+                    <label>
+                        <input name="exp_label" type="radio" value="comp" required/>
+                        <span>Comp</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn">Next</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

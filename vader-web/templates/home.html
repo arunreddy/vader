@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="center-align">
+            <div><b>Identify Me!!</b></div>
+            <img src="{{ task }}" alt="" width="400px" height="400px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <p class="center deep-orange-text text-accent-3 flow-text">Instructions: Please enter the valid email
+                ID.</p>
+        </div>
+        <div class="col offset-s3 s6">
+            <form action="" method="get">
+                <fieldset>
+                    <legend>Login!</legend>
+                    <input type="email" name="email" placeholder="Enter your email address">
+                    <button type="submit">Enter</button>
+                </fieldset>
+            </form>
+        </div>
+
+
+    </div>
+{% endblock %}
